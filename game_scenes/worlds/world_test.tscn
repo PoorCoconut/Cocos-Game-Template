@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cbh3de4aa1ibn"]
+
+[ext_resource type="PackedScene" uid="uid://b3fobc4mms4jw" path="res://systems/World Camera Component/world_camera_component.tscn" id="1_dll30"]
+[ext_resource type="PackedScene" uid="uid://be8jw63t68sxd" path="res://actors/player/top_down_player.tscn" id="2_45fix"]
+
+[sub_resource type="Gradient" id="Gradient_dll30"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_45fix"]
+gradient = SubResource("Gradient_dll30")
+
+[node name="World_Test" type="Node2D" unique_id=439317118]
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=1549340953]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = SubResource("GradientTexture2D_45fix")
+
+[node name="WorldCameraComponent" parent="." unique_id=1725945058 node_paths=PackedStringArray("target") instance=ExtResource("1_dll30")]
+position_smoothing_enabled = true
+target = NodePath("../TopDownPlayer")
+
+[node name="TopDownPlayer" parent="." unique_id=240714517 instance=ExtResource("2_45fix")]
+position = Vector2(192, 152)

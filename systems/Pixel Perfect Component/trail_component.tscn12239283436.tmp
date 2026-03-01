@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://4mkboxfad15r"]
+
+[ext_resource type="Script" uid="uid://skwpdcgtlmqs" path="res://systems/Trail Component/trail_component.gd" id="1_isbe4"]
+
+[sub_resource type="Curve" id="Curve_5uqgn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wdvo"]
+
+[node name="SubViewport" type="SubViewport" unique_id=62933312]
+handle_input_locally = false
+size = Vector2i(320, 180)
+size_2d_override = Vector2i(160, 90)
+render_target_update_mode = 4
+
+[node name="Trail" type="Line2D" parent="." unique_id=1710371392]
+top_level = true
+width = 5.0
+width_curve = SubResource("Curve_5uqgn")
+script = ExtResource("1_isbe4")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=387273911]
+visible = false
+
+[node name="trail_component" type="SubViewportContainer" parent="Node2D" unique_id=196927665]
+texture_filter = 1
+material = SubResource("ShaderMaterial_7wdvo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true

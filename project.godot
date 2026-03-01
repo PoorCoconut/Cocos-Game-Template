@@ -1,0 +1,61 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Coco's Game Template"
+run/main_scene="uid://camlgx74mlna4"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bq7tu06oyqbef"
+
+[autoload]
+
+Events="*uid://dp7ruldhwh5ke"
+GameManager="*uid://ce3bsgstyo3l7"
+LoadingScreen="*uid://1cdnr1bl805e"
+MusicManager="*uid://c0m8bxeg6ekky"
+SettingsManager="*uid://boav6xpuq74ks"
+SoundBank="*uid://ce7kxbchc8ajm"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
+
+[file_customization]
+
+folder_colors={
+"res://actors/": "red",
+"res://game_assets/": "orange",
+"res://game_scenes/": "yellow",
+"res://globals/": "green",
+"res://sound/": "teal",
+"res://systems/": "blue",
+"res://vfx/": "purple"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b3vev5pcqxupu"]
+
+[ext_resource type="Script" uid="uid://bip5hhxeryemi" path="res://actors/player/player.gd" id="1_5t8hc"]
+[ext_resource type="Texture2D" uid="uid://cdq1w16bsklp2" path="res://icon.svg" id="2_xboos"]
+[ext_resource type="PackedScene" uid="uid://c58coiv6jurie" path="res://systems/Hitbox and Hurtbox Components/hitbox_component.tscn" id="2_xpno6"]
+[ext_resource type="PackedScene" uid="uid://p3eg848tu85" path="res://systems/Hitbox and Hurtbox Components/hurtbox_component.tscn" id="3_xboos"]
+
+[node name="BasePlayer" type="CharacterBody2D" unique_id=240714517]
+script = ExtResource("1_5t8hc")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1965004166]
+texture = ExtResource("2_xboos")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=438437244]
+
+[node name="DebugStateLabel" type="Label" parent="." unique_id=1664998739]
+offset_left = -24.0
+offset_top = -96.0
+offset_right = 26.0
+offset_bottom = -73.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HitboxComponent" parent="." unique_id=1755790887 instance=ExtResource("2_xpno6")]
+
+[node name="HurtboxComponent" parent="." unique_id=330416737 instance=ExtResource("3_xboos")]

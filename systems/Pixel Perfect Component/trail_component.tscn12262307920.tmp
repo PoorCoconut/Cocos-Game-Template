@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4mkboxfad15r"]
+
+[ext_resource type="Script" uid="uid://skwpdcgtlmqs" path="res://systems/Trail Component/trail_component.gd" id="1_isbe4"]
+
+[sub_resource type="Curve" id="Curve_5uqgn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="SubViewport" type="SubViewport" unique_id=62933312]
+handle_input_locally = false
+size = Vector2i(320, 180)
+size_2d_override = Vector2i(160, 90)
+render_target_update_mode = 4
+
+[node name="Trail" type="Line2D" parent="." unique_id=1710371392]
+top_level = true
+width = 5.0
+width_curve = SubResource("Curve_5uqgn")
+script = ExtResource("1_isbe4")

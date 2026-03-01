@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://1cdnr1bl805e"]
+
+[ext_resource type="Script" uid="uid://c3ymjew01dbxk" path="res://globals/Loading Screen/loading_screen.gd" id="1_jfis6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3ggr"]
+bg_color = Color(0.09239706, 0.09239707, 0.092397, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfis6"]
+bg_color = Color(0.8136529, 0.6790697, 0.5736322, 1)
+
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1498893074]
+layer = 100
+script = ExtResource("1_jfis6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2042540885]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LoadingBar" type="ProgressBar" parent="." unique_id=2124691850]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -12.0
+offset_right = -40.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_g3ggr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jfis6")

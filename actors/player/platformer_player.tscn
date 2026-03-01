@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://begvhj5jhxtcv"]
+
+[ext_resource type="PackedScene" uid="uid://b3vev5pcqxupu" path="res://actors/player/baseplayer.tscn" id="1_4ujs0"]
+[ext_resource type="Script" uid="uid://bhxjxgka2uddu" path="res://systems/FSM/FSM.gd" id="2_vknxo"]
+
+[node name="PlatformerPlayer" unique_id=240714517 instance=ExtResource("1_4ujs0")]
+
+[node name="DebugStateLabel" parent="." index="2" unique_id=1664998739]
+unique_name_in_owner = true
+
+[node name="FSM" type="Node" parent="." index="5" unique_id=1532451523]
+script = ExtResource("2_vknxo")
+
+[node name="Idle" type="Node" parent="FSM" index="0" unique_id=1703411358]
+
+[node name="Run" type="Node" parent="FSM" index="1" unique_id=1530896622]
+
+[node name="Jump" type="Node" parent="FSM" index="2" unique_id=182970554]
+
+[node name="Fall" type="Node" parent="FSM" index="3" unique_id=1940273507]

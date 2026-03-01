@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://btbcu7i2ahwq5"]
+
+[ext_resource type="Script" uid="uid://dax15qxwg4uwj" path="res://systems/HUD/player_hud.gd" id="1_cadqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cadqa"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhs8c"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0keh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gw1j"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 0)
+
+[node name="PlayerHUD" type="CanvasLayer" unique_id=1878162404]
+script = ExtResource("1_cadqa")
+
+[node name="BarContainer" type="Node2D" parent="." unique_id=1156197549]
+
+[node name="WhiteBar" type="ProgressBar" parent="BarContainer" unique_id=1739072480]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 24.0
+theme_override_styles/background = SubResource("StyleBoxFlat_cadqa")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rhs8c")
+show_percentage = false
+
+[node name="BarChaser" type="ProgressBar" parent="BarContainer" unique_id=429415386]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 24.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i0keh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2gw1j")
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="." unique_id=277835653]

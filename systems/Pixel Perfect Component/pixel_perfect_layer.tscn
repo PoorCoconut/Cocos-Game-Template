@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://4mkboxfad15r"]
+
+[ext_resource type="Script" uid="uid://cgju4e4l2sl3a" path="res://systems/Pixel Perfect Component/pixel_perfect_layer.gd" id="1_gwgv0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5uqgn"]
+viewport_path = NodePath("SubViewport")
+
+[node name="PixelPerfectLayer" type="CanvasLayer" unique_id=1244063802 node_paths=PackedStringArray("pp_camera")]
+layer = -1
+script = ExtResource("1_gwgv0")
+pp_camera = NodePath("SubViewport/PixelPerfectCam")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=62933312]
+unique_name_in_owner = true
+transparent_bg = true
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(384, 216)
+render_target_update_mode = 4
+
+[node name="PixelPerfectCam" type="Camera2D" parent="SubViewport" unique_id=747752244]
+anchor_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=226297179]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_5uqgn")

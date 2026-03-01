@@ -1,0 +1,225 @@
+[gd_scene format=3 uid="uid://camlgx74mlna4"]
+
+[ext_resource type="Script" uid="uid://b6rwu6r4il3so" path="res://game_scenes/menus/MainMenu/main_menu.gd" id="1_h6sl1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqmwn"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5njb"]
+bg_color = Color(0.18039216, 0.18039216, 0.18039216, 1)
+border_width_top = 2
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3phpx"]
+
+[node name="MainMenu" type="Control" unique_id=804645915]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h6sl1")
+next_level_path = "uid://cbh3de4aa1ibn"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=29496978]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameTitle" type="RichTextLabel" parent="." unique_id=1318100979]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 128.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "GAME NAME"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainerSizer" type="MarginContainer" parent="." unique_id=921923850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 250
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 10
+
+[node name="ButtonContainer" type="VBoxContainer" parent="ButtonContainerSizer" unique_id=803903837]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Button_Play" type="Button" parent="ButtonContainerSizer/ButtonContainer" unique_id=988471624]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLAY"
+
+[node name="Button_Settings" type="Button" parent="ButtonContainerSizer/ButtonContainer" unique_id=603873806]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="Button_Credits" type="Button" parent="ButtonContainerSizer/ButtonContainer" unique_id=1636824044]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CREDITS"
+
+[node name="Button_Exit" type="Button" parent="ButtonContainerSizer/ButtonContainer" unique_id=653641676]
+unique_name_in_owner = true
+layout_mode = 2
+text = "EXIT"
+
+[node name="SettingsContainer" type="MarginContainer" parent="." unique_id=386881365]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="SettingsTabs" type="TabContainer" parent="SettingsContainer" unique_id=1400921541]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oqmwn")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_c5njb")
+theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_3phpx")
+current_tab = 0
+tab_0/title = "General"
+
+[node name="GeneraSettings" type="MarginContainer" parent="SettingsContainer/SettingsTabs" unique_id=1393486794]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+metadata/_tab_index = 0
+metadata/_tab_name = "General"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/SettingsTabs/GeneraSettings" unique_id=1643775459]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=801633829]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="MasterVolume" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=782091974]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/MasterVolume" unique_id=88844148]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Master"
+
+[node name="Slider_MaVol" type="HSlider" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/MasterVolume" unique_id=637964225]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 2.0
+step = 0.1
+
+[node name="MusicVolume" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=170264899]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/MusicVolume" unique_id=1012630994]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Music"
+
+[node name="Slider_MuVol" type="HSlider" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/MusicVolume" unique_id=1222097655]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 2.0
+step = 0.1
+
+[node name="SFXVolume" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=1251691021]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/SFXVolume" unique_id=1136966587]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "SFX"
+
+[node name="Slider_SVol" type="HSlider" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/SFXVolume" unique_id=1461787990]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 2.0
+step = 0.1
+
+[node name="WarningLabel" type="RichTextLabel" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=2011723749]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.60693425, 0.54883397, 1)
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+text = "[shake]WARNING! YOU ARE ABOUT TO RESET EVERYTHING. INCLUDING YOUR SAVE FILE!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="NukeButton" type="Button" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=1586894077]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9999997, 0.13447198, 0.38570955, 1)
+theme_override_font_sizes/font_size = 8
+text = "NUKE MY FILE!"
+
+[node name="ResetButton" type="Button" parent="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer" unique_id=1591014304]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 8
+text = "RESET GAME"
+
+[node name="Back" type="Control" parent="SettingsContainer" unique_id=1164429468]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BackButton" type="Button" parent="SettingsContainer/Back" unique_id=1018995005]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 28.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 8
+text = "BACK"
+
+[connection signal="pressed" from="ButtonContainerSizer/ButtonContainer/Button_Play" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="ButtonContainerSizer/ButtonContainer/Button_Settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="ButtonContainerSizer/ButtonContainer/Button_Credits" to="." method="_on_button_credits_pressed"]
+[connection signal="pressed" from="ButtonContainerSizer/ButtonContainer/Button_Exit" to="." method="_on_button_exit_pressed"]
+[connection signal="value_changed" from="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/MasterVolume/Slider_MaVol" to="." method="_on_slider_ma_vol_value_changed"]
+[connection signal="value_changed" from="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/MusicVolume/Slider_MuVol" to="." method="_on_slider_mu_vol_value_changed"]
+[connection signal="value_changed" from="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/SFXVolume/Slider_SVol" to="." method="_on_slider_s_vol_value_changed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/NukeButton" to="." method="_on_nuke_button_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/GeneraSettings/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="SettingsContainer/Back/BackButton" to="." method="_on_back_button_pressed"]

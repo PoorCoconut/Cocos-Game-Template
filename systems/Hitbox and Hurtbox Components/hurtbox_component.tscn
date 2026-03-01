@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://p3eg848tu85"]
+
+[node name="HurtboxComponent" type="Area2D" unique_id=330416737]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993016751]
+debug_color = Color(0, 0.6509804, 0.09803922, 0)

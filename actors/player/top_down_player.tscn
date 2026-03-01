@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://be8jw63t68sxd"]
+
+[ext_resource type="PackedScene" uid="uid://b3vev5pcqxupu" path="res://actors/player/baseplayer.tscn" id="1_wdfuy"]
+[ext_resource type="Script" uid="uid://bhxjxgka2uddu" path="res://systems/FSM/FSM.gd" id="2_tbogj"]
+[ext_resource type="Script" uid="uid://qri00n31jglx" path="res://actors/player/PlayerFSM/TopDown/state_idle.gd" id="3_snjlb"]
+[ext_resource type="Script" uid="uid://b1ci27y347n1w" path="res://actors/player/PlayerFSM/TopDown/state_run.gd" id="4_la8er"]
+
+[node name="TopDownPlayer" unique_id=240714517 instance=ExtResource("1_wdfuy")]
+MAX_SPEED = 300.0
+ACCELERATION = 1500.0
+FRICTION = 250.0
+
+[node name="DebugStateLabel" parent="." index="2" unique_id=1664998739]
+unique_name_in_owner = true
+
+[node name="FSM" type="Node" parent="." index="5" unique_id=2121594947 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_tbogj")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="FSM" index="0" unique_id=1002500339 node_paths=PackedStringArray("PLAYER")]
+script = ExtResource("3_snjlb")
+PLAYER = NodePath("../..")
+
+[node name="Run" type="Node" parent="FSM" index="1" unique_id=1211236791 node_paths=PackedStringArray("PLAYER")]
+script = ExtResource("4_la8er")
+PLAYER = NodePath("../..")
