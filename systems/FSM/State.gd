@@ -2,6 +2,7 @@ extends Node
 class_name State
 
 @export var PLAYER : Player
+@export var ENTITY : CollisionObject2D
 @warning_ignore("unused_signal")
 signal transition
 

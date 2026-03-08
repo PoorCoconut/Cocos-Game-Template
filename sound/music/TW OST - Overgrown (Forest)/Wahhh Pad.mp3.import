@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cs2uq2glmo7gb"
+path="res://.godot/imported/Wahhh Pad.mp3-974535dbf701905dc496870f7707295e.mp3str"
+
+[deps]
+
+source_file="res://sound/music/TW OST - Overgrown (Forest)/Wahhh Pad.mp3"
+dest_files=["res://.godot/imported/Wahhh Pad.mp3-974535dbf701905dc496870f7707295e.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

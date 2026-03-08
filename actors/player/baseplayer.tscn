@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c58coiv6jurie" path="res://systems/Hitbox and Hurtbox Components/hitbox_component.tscn" id="2_xpno6"]
 [ext_resource type="PackedScene" uid="uid://p3eg848tu85" path="res://systems/Hitbox and Hurtbox Components/hurtbox_component.tscn" id="3_xboos"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xboos"]
+radius = 56.0
+
 [node name="BasePlayer" type="CharacterBody2D" unique_id=240714517]
 script = ExtResource("1_5t8hc")
 
@@ -12,6 +15,7 @@ script = ExtResource("1_5t8hc")
 texture = ExtResource("2_xboos")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=438437244]
+shape = SubResource("CircleShape2D_xboos")
 
 [node name="DebugStateLabel" type="Label" parent="." unique_id=1664998739]
 offset_left = -24.0

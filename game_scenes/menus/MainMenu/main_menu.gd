@@ -53,26 +53,53 @@ func _on_slider_s_vol_value_changed(value: float) -> void:
 
 func _on_nuke_button_pressed() -> void:
 	#Reset ALL Settings to default, including player position
-	# --- 1. RESET AUDIO SETTINGS ---
 	%WarningLabel.hide()
 	%NukeButton.hide()
 	%ResetButton.show()
 	
+	#RESETTING AUDIO
 	SettingsManager.master_vol = 1.0
 	SettingsManager.music_vol = 1.0
 	SettingsManager.sfx_vol = 1.0
 	SettingsManager.save_settings()
 	
-	# --- 2. UPDATE THE UI SLIDERS ---
-	# We have to visually move the sliders back to 1.0, otherwise 
-	# they will still look dragged down on the screen!
 	slider_ma_vol.value = SettingsManager.master_vol
 	slider_mu_vol.value = SettingsManager.music_vol
 	slider_s_vol.value = SettingsManager.sfx_vol
 	
-	# --- 3. WIPE PLAYER POSITION (SAVE DATA) ---
+	#PLAYER POSITION [ALSO CALL YOUR "RESET PLAYER STATS" HERE]
 	# Check if the save file exists, and if it does, delete it forever.
 	var save_path = "user://savegame.json"
 	if FileAccess.file_exists(save_path):
 		DirAccess.remove_absolute(save_path)
 		print("Save data wiped! Next run starts from the bottom.")
+	
+	#RESET KEYBINDS
+	SettingsManager.reset_keybinds_to_default()
+
+
+func _on_button_1080p_pressed() -> void:
+	print("CLICKED 1080p BUTTON")
+	DisplayServer.window_set_size(Vector2i(1980, 1080))
+
+func _on_button_720p_pressed() -> void:
+	print("CLICKED 720p BUTTON")
+	DisplayServer.window_set_size(Vector2i(1280, 720))
+
+func _on_button_540p_pressed() -> void:
+	print("CLICKED 540p BUTTON")
+	DisplayServer.window_set_size(Vector2i(990, 540))
+
+func _on_button_windowed_pressed() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+func _on_button_fullscreen_pressed() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+func _on_button_exclusive_fullscreen_pressed() -> void:
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+
+##CONTROLS SETTINGS AND STUFF
+@onready var action_list_container : GridContainer = %RebindContainer
+func _on_controls_reset_pressed() -> void:
+	SettingsManager.reset_keybinds_to_default()

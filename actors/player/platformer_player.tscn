@@ -2,19 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://b3vev5pcqxupu" path="res://actors/player/baseplayer.tscn" id="1_4ujs0"]
 [ext_resource type="Script" uid="uid://bhxjxgka2uddu" path="res://systems/FSM/FSM.gd" id="2_vknxo"]
+[ext_resource type="Script" uid="uid://b5sccawimxmbv" path="res://actors/player/platformer_player.gd" id="2_xdu1m"]
+[ext_resource type="Script" uid="uid://bw3f8fhya63os" path="res://actors/player/PlayerFSM/Platformer/state_idle.gd" id="3_okyr1"]
+[ext_resource type="Script" uid="uid://rhklidk30f87" path="res://actors/player/PlayerFSM/Platformer/state_run.gd" id="4_t1u4a"]
+[ext_resource type="Script" uid="uid://dnskee7jg3wju" path="res://actors/player/PlayerFSM/Platformer/state_jump.gd" id="5_xdu1m"]
+[ext_resource type="Script" uid="uid://d1inlq8deaqoy" path="res://actors/player/PlayerFSM/Platformer/state_fall.gd" id="6_7x6a1"]
 
 [node name="PlatformerPlayer" unique_id=240714517 instance=ExtResource("1_4ujs0")]
+script = ExtResource("2_xdu1m")
+JUMP_VELOCITY = -200.0
+GRAVITY = 300.0
 
 [node name="DebugStateLabel" parent="." index="2" unique_id=1664998739]
 unique_name_in_owner = true
 
-[node name="FSM" type="Node" parent="." index="5" unique_id=1532451523]
+[node name="FSM" type="Node" parent="." index="5" unique_id=1532451523 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_vknxo")
+initial_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="FSM" index="0" unique_id=1703411358]
+[node name="Idle" type="Node" parent="FSM" index="0" unique_id=1703411358 node_paths=PackedStringArray("PLAYER")]
+script = ExtResource("3_okyr1")
+PLAYER = NodePath("../..")
 
-[node name="Run" type="Node" parent="FSM" index="1" unique_id=1530896622]
+[node name="Run" type="Node" parent="FSM" index="1" unique_id=1530896622 node_paths=PackedStringArray("PLAYER")]
+script = ExtResource("4_t1u4a")
+PLAYER = NodePath("../..")
 
-[node name="Jump" type="Node" parent="FSM" index="2" unique_id=182970554]
+[node name="Jump" type="Node" parent="FSM" index="2" unique_id=182970554 node_paths=PackedStringArray("PLAYER")]
+script = ExtResource("5_xdu1m")
+PLAYER = NodePath("../..")
 
-[node name="Fall" type="Node" parent="FSM" index="3" unique_id=1940273507]
+[node name="Fall" type="Node" parent="FSM" index="3" unique_id=1940273507 node_paths=PackedStringArray("PLAYER")]
+script = ExtResource("6_7x6a1")
+PLAYER = NodePath("../..")

@@ -9,32 +9,28 @@ func _ready() -> void:
 
 ##SAVE FILE LOGIC
 func save_player_position(player_pos: Vector2) -> void:
-	# 1. Pack the X and Y coordinates into a dictionary
 	var save_data = {
 		"player_x": player_pos.x,
 		"player_y": player_pos.y
 	}
-	
-	# 2. Open the file and write the JSON string
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(save_data, "\t"))
-	
-	print("Game Saved! Player position locked at: ", player_pos)
+	print("Game Saved!")
 
 func load_player_position():
-	# 1. Check if the player has ever saved the game before
+	#Check if the player has ever saved the game before
 	if not FileAccess.file_exists(SAVE_PATH):
 		print("No save file found. Starting from the bottom!")
 		return null # Returning null lets the Player node know to use its default spawn
 		
-	# 2. Open the file and read the text
+	#Open the file and read the text
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 	var json_text = file.get_as_text()
 	
-	# 3. Parse the JSON back into a dictionary
+	#Parse the JSON back into a dictionary
 	var save_data = JSON.parse_string(json_text)
 	
-	# 4. Extract the coordinates and return them as a usable Vector2
+	#Extract the coordinates and return them as a usable Vector2
 	if save_data and save_data.has("player_x") and save_data.has("player_y"):
 		var loaded_pos = Vector2(save_data["player_x"], save_data["player_y"])
 		print("Save loaded! Teleporting player to: ", loaded_pos)

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q6lqqws7dqa6"
+path="res://.godot/imported/Acoustic Soft.mp3-b0381171537c27f98e6dbb6d0a2c6d6f.mp3str"
+
+[deps]
+
+source_file="res://sound/music/TW OST - Overgrown (Forest)/Acoustic Soft.mp3"
+dest_files=["res://.godot/imported/Acoustic Soft.mp3-b0381171537c27f98e6dbb6d0a2c6d6f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

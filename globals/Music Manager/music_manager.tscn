@@ -5,7 +5,3 @@
 [node name="MusicManager" type="Node" unique_id=1495717072]
 process_mode = 3
 script = ExtResource("1_kwnxt")
-
-[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1668013639]
-unique_name_in_owner = true
-bus = &"Music"

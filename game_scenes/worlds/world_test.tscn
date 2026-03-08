@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://cbh3de4aa1ibn"]
 
 [ext_resource type="PackedScene" uid="uid://b3fobc4mms4jw" path="res://systems/World Camera Component/world_camera_component.tscn" id="1_dll30"]
+[ext_resource type="Script" uid="uid://xlf878422jy3" path="res://game_scenes/worlds/world_test.gd" id="1_oaopk"]
 [ext_resource type="PackedScene" uid="uid://be8jw63t68sxd" path="res://actors/player/top_down_player.tscn" id="2_45fix"]
+[ext_resource type="PackedScene" uid="uid://bkrih4wj555nw" path="res://systems/Pause Menu Component/pause_menu_component.tscn" id="3_45fix"]
+[ext_resource type="PackedScene" uid="uid://begvhj5jhxtcv" path="res://actors/player/platformer_player.tscn" id="3_hal7r"]
 
 [sub_resource type="Gradient" id="Gradient_dll30"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_45fix"]
 gradient = SubResource("Gradient_dll30")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45fix"]
+size = Vector2(896, 20)
+
 [node name="World_Test" type="Node2D" unique_id=439317118]
+script = ExtResource("1_oaopk")
 
 [node name="ColorRect" type="TextureRect" parent="." unique_id=1549340953]
 offset_right = 640.0
@@ -19,5 +26,51 @@ texture = SubResource("GradientTexture2D_45fix")
 position_smoothing_enabled = true
 target = NodePath("../TopDownPlayer")
 
-[node name="TopDownPlayer" parent="." unique_id=240714517 instance=ExtResource("2_45fix")]
-position = Vector2(192, 152)
+[node name="PauseMenuComponent" parent="." unique_id=547681459 instance=ExtResource("3_45fix")]
+visible = false
+menu_path = "uid://camlgx74mlna4"
+
+[node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=900510609]
+position = Vector2(320, 296)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1136401015]
+shape = SubResource("RectangleShape2D_45fix")
+
+[node name="TopDownPlayer" parent="." unique_id=729409689 instance=ExtResource("2_45fix")]
+position = Vector2(320, 88)
+
+[node name="PlatformerPlayer" parent="." unique_id=240714517 instance=ExtResource("3_hal7r")]
+position = Vector2(320, 224)
+
+[node name="PlaySfx" type="Button" parent="." unique_id=1849680328]
+offset_left = 448.0
+offset_top = 40.0
+offset_right = 527.0
+offset_bottom = 71.0
+text = "PLAY SFX"
+
+[node name="PlayMusic1" type="Button" parent="." unique_id=1898493460]
+offset_left = 448.0
+offset_top = 80.0
+offset_right = 563.0
+offset_bottom = 111.0
+text = "PLAY TRACK 1"
+
+[node name="PlayMusic2" type="Button" parent="." unique_id=1374980880]
+offset_left = 448.0
+offset_top = 120.0
+offset_right = 563.0
+offset_bottom = 151.0
+text = "PLAY TRACK 2"
+
+[node name="StopMusic" type="Button" parent="." unique_id=2122270684]
+offset_left = 448.0
+offset_top = 160.0
+offset_right = 563.0
+offset_bottom = 191.0
+text = "STOP MUSIC"
+
+[connection signal="pressed" from="PlaySfx" to="." method="_on_play_sfx_pressed"]
+[connection signal="pressed" from="PlayMusic1" to="." method="_on_play_music_1_pressed"]
+[connection signal="pressed" from="PlayMusic2" to="." method="_on_play_music_2_pressed"]
+[connection signal="pressed" from="StopMusic" to="." method="_on_stop_music_pressed"]

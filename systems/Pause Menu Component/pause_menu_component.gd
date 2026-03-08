@@ -7,10 +7,7 @@ extends CanvasLayer
 @onready var button_menu: Button = %MenuButton
 @onready var button_back: Button = %BackButton
 
-# --- ANIMATION VARIABLES ---
-@export var hover_multiplier : float = 1.2
-var base_scale : Vector2 = Vector2.ONE
-var button_tweens : Dictionary = {}
+@export_file("*.tscn") var menu_path : String
 
 # --- AUDIO MUFFLE VARIABLES ---
 var music_bus_idx : int
@@ -93,7 +90,7 @@ func _on_menu_button_pressed() -> void:
 	AudioServer.set_bus_effect_enabled(music_bus_idx, 0, false)
 	
 	get_tree().paused = false
-	LoadingScreen.load_level("res://scenes/menu/MainMenu/main_menu.tscn")
+	LoadingScreen.load_level(menu_path)
 
 func _on_back_button_pressed() -> void:
 	hide_menu()

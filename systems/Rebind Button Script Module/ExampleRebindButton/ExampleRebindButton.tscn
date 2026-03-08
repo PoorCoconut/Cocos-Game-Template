@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ctwgkaig45ult"]
+
+[ext_resource type="Script" uid="uid://cbm3yuddsvylk" path="res://systems/Rebind Button Script Module/ExampleRebindButton/example_rebind_button.gd" id="1_dfga8"]
+[ext_resource type="Script" uid="uid://cxjik30ut0s3y" path="res://systems/Rebind Button Script Module/RebindButton.gd" id="2_bjxba"]
+
+[node name="ExampleRebindButton" type="Control" unique_id=494233150]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfga8")
+
+[node name="RebindButton" type="Button" parent="." unique_id=815358268]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_bjxba")
+action_name = "ui_left"

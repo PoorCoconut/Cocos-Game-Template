@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmuxi10l8bypd"
+path="res://.godot/imported/Violas Sustain.mp3-0a6e7edb41a4a2b7e5cfb5fa747b5fe6.mp3str"
+
+[deps]
+
+source_file="res://sound/music/TW OST - Overgrown (Forest)/Violas Sustain.mp3"
+dest_files=["res://.godot/imported/Violas Sustain.mp3-0a6e7edb41a4a2b7e5cfb5fa747b5fe6.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
