@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://c0m8bxeg6ekky"]
 
 [ext_resource type="Script" uid="uid://cu4cmygusntwq" path="res://globals/Music Manager/music_manager.gd" id="1_kwnxt"]
+[ext_resource type="Script" uid="uid://ok7aycfrhu2f" path="res://systems/Custom Music Track Resource/MusicTrack.gd" id="2_cfotr"]
+[ext_resource type="Resource" uid="uid://cf6wh5r475byb" path="res://sound/music/example_track.tres" id="3_jxerq"]
+[ext_resource type="Resource" uid="uid://cfha3wc0frq7a" path="res://sound/music/example_track2.tres" id="4_ll68j"]
 
 [node name="MusicManager" type="Node" unique_id=1495717072]
 process_mode = 3
 script = ExtResource("1_kwnxt")
+music_tracks = Array[ExtResource("2_cfotr")]([ExtResource("3_jxerq"), ExtResource("4_ll68j")])

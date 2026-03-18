@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cs2uq2glmo7gb"
+path="res://.godot/imported/Wahhh Pad.mp3-a3cdbfa5a742d795e98377da0e3279f0.mp3str"
+
+[deps]
+
+source_file="res://sound/music/example_music/Wahhh Pad.mp3"
+dest_files=["res://.godot/imported/Wahhh Pad.mp3-a3cdbfa5a742d795e98377da0e3279f0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

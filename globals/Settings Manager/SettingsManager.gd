@@ -64,13 +64,7 @@ signal keybinds_updated
 
 var config = ConfigFile.new()
 const SAVE_PATH : String = "user://settings.cfg"
-var slotted_binds: Dictionary = {
-	"move_up" : {0 : InputEvent, 1: InputEvent},
-	"move_down" : {0 : InputEvent, 1: InputEvent},
-	"move_left" : {0 : InputEvent, 1: InputEvent},
-	"move_right" : {0 : InputEvent, 1: InputEvent}, 
-	
-}
+var slotted_binds: Dictionary = {}
 
 func reset_keybinds_to_default() -> void:
 	if config.has_section("Keybinds"):

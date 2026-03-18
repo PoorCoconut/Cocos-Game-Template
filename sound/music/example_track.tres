@@ -1,20 +1,13 @@
 [gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://cf6wh5r475byb"]
 
 [ext_resource type="Script" uid="uid://ok7aycfrhu2f" path="res://systems/Custom Music Track Resource/MusicTrack.gd" id="1_j7kpo"]
-[ext_resource type="AudioStream" uid="uid://cs2uq2glmo7gb" path="res://sound/music/TW OST - Overgrown (Forest)/Wahhh Pad.mp3" id="2_ddehi"]
-[ext_resource type="AudioStream" uid="uid://bnv17g7x3444b" path="res://sound/music/TW OST - Overgrown (Forest)/Dreams.mp3" id="3_2gg8c"]
-[ext_resource type="AudioStream" uid="uid://hunw1ft2r33c" path="res://sound/music/TW OST - Overgrown (Forest)/Double Bass Staccato.mp3" id="4_2f31b"]
-[ext_resource type="AudioStream" uid="uid://dlicy4isj4xwe" path="res://sound/music/TW OST - Overgrown (Forest)/Violins Pizzicato.mp3" id="5_bahea"]
-[ext_resource type="AudioStream" uid="uid://dncltbs5u5cb4" path="res://sound/music/TW OST - Overgrown (Forest)/Nylon Soft.mp3" id="6_dighn"]
-[ext_resource type="AudioStream" uid="uid://q6lqqws7dqa6" path="res://sound/music/TW OST - Overgrown (Forest)/Acoustic Soft.mp3" id="7_oqwny"]
-[ext_resource type="AudioStream" uid="uid://df5674vjhwmuh" path="res://sound/music/TW OST - Overgrown (Forest)/Long String.mp3" id="8_x5ekk"]
-[ext_resource type="AudioStream" uid="uid://b4dhg1ymmyv7w" path="res://sound/music/TW OST - Overgrown (Forest)/Brighten.mp3" id="9_2u68l"]
-[ext_resource type="AudioStream" uid="uid://b3s2rxu28qqkm" path="res://sound/music/TW OST - Overgrown (Forest)/Strat Air FX.mp3" id="10_b7nj2"]
-[ext_resource type="AudioStream" uid="uid://bhl33w8seh0h5" path="res://sound/music/TW OST - Overgrown (Forest)/High Hats.mp3" id="11_hw5n2"]
-[ext_resource type="AudioStream" uid="uid://dhncqcdsnuepe" path="res://sound/music/TW OST - Overgrown (Forest)/Drum Beat .mp3" id="12_hyfj4"]
+[ext_resource type="AudioStream" uid="uid://b4dhg1ymmyv7w" path="res://sound/music/example_music/Brighten.mp3" id="2_ltjyp"]
+[ext_resource type="AudioStream" uid="uid://bhl33w8seh0h5" path="res://sound/music/example_music/High Hats.mp3" id="2_pxcbf"]
+[ext_resource type="AudioStream" uid="uid://cs2uq2glmo7gb" path="res://sound/music/example_music/Wahhh Pad.mp3" id="3_pxcbf"]
+[ext_resource type="AudioStream" uid="uid://dhncqcdsnuepe" path="res://sound/music/example_music/Drum Beat .mp3" id="5_5f8a8"]
 
 [resource]
 script = ExtResource("1_j7kpo")
-track_name = "forest"
-stems = Array[AudioStream]([ExtResource("2_ddehi"), ExtResource("3_2gg8c"), ExtResource("4_2f31b"), ExtResource("5_bahea"), ExtResource("6_dighn"), ExtResource("7_oqwny"), ExtResource("8_x5ekk"), ExtResource("9_2u68l"), ExtResource("10_b7nj2"), ExtResource("11_hw5n2"), ExtResource("12_hyfj4")])
+track_name = "music1"
+stems = Array[AudioStream]([ExtResource("3_pxcbf"), ExtResource("2_pxcbf"), ExtResource("2_ltjyp"), ExtResource("5_5f8a8")])
 metadata/_custom_type_script = "uid://ok7aycfrhu2f"

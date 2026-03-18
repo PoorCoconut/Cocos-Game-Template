@@ -49,6 +49,10 @@ folder_colors={
 "res://vfx/": "purple"
 }
 
+[global_group]
+
+player=""
+
 [input]
 
 move_up={

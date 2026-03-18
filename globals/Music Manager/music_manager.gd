@@ -61,23 +61,20 @@ func set_intensity(new_intensity: float, fade_time: float = 1.0) -> void:
 		var target_vol = _get_layer_volume(i, active_players.size(), current_intensity)
 		tween.parallel().tween_property(active_players[i], "volume_db", target_vol, fade_time)
 
-# --- INTERNAL MATH ---
-
-# The secret sauce that allows singular tracks to work perfectly alongside 5-layer tracks
+#Allows singular tracks to work perfectly alongside 5-layer tracks
 func _get_layer_volume(index: int, total_layers: int, intensity: float) -> float:
-	# 1. Singular tracks OR the Base Layer (Index 0) always play at max volume
+	#Singular tracks OR the Base Layer (Index 0) always play at max volume
 	if total_layers == 1 or index == 0:
 		return 0.0 
 		
-	# 2. Slice the intensity pie. If we have 3 layers, layer 1 fades in at 0.5, layer 2 at 1.0
+	#Slice the intensity pie. If we have 3 layers, layer 1 fades in at 0.5, layer 2 at 1.0
 	var slice = 1.0 / float(total_layers - 1)
 	var start_fade = slice * (index - 1)
 	var full_volume = slice * index
 	
-	# 3. Calculate a 0.0 to 1.0 weight for this specific layer
+	#Calculate a 0.0 to 1.0 weight for this specific layer
 	var weight = clamp((intensity - start_fade) / (full_volume - start_fade), 0.0, 1.0)
 	
-	# Godot's built-in math to smoothly convert linear weight to decibels!
 	if weight <= 0.01:
 		return -80.0
 	return linear_to_db(weight)
@@ -85,3 +82,22 @@ func _get_layer_volume(index: int, total_layers: int, intensity: float) -> float
 func _cleanup_players(players_to_kill: Array[AudioStreamPlayer]) -> void:
 	for p in players_to_kill:
 		p.queue_free()
+
+func stop_music(fade_out_time: float = 2.0) -> void:
+	if active_players.is_empty():
+		return # Nothing is playing so do nothing
+		
+	#Move all currently playing stems to the chopping block
+	var fading_players = active_players.duplicate()
+	
+	#Clear the active list and reset the track name so it can be played again later
+	active_players.clear()
+	current_track_name = ""
+	
+	#Fade them all to silence smoothly
+	var tween = create_tween()
+	for player in fading_players:
+		tween.parallel().tween_property(player, "volume_db", -80.0, fade_out_time)
+		
+	#Delete the audio nodes once the fade-out is complete
+	tween.tween_callback(func(): _cleanup_players(fading_players))

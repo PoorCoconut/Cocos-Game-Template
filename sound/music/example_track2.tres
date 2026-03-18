@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="MusicTrack" format=3 uid="uid://cfha3wc0frq7a"]
+
+[ext_resource type="Script" uid="uid://ok7aycfrhu2f" path="res://systems/Custom Music Track Resource/MusicTrack.gd" id="1_v62kb"]
+[ext_resource type="AudioStream" uid="uid://b3s2rxu28qqkm" path="res://sound/music/example_music/Strat Air FX.mp3" id="2_ehb0c"]
+
+[resource]
+script = ExtResource("1_v62kb")
+track_name = "music2"
+stems = Array[AudioStream]([ExtResource("2_ehb0c")])
+metadata/_custom_type_script = "uid://ok7aycfrhu2f"

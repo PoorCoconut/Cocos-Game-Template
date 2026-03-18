@@ -5,11 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://be8jw63t68sxd" path="res://actors/player/top_down_player.tscn" id="2_45fix"]
 [ext_resource type="PackedScene" uid="uid://bkrih4wj555nw" path="res://systems/Pause Menu Component/pause_menu_component.tscn" id="3_45fix"]
 [ext_resource type="PackedScene" uid="uid://begvhj5jhxtcv" path="res://actors/player/platformer_player.tscn" id="3_hal7r"]
+[ext_resource type="PackedScene" uid="uid://b5kib01h7s7am" path="res://systems/Camera Limit Zone Component/camera_limit_zone_component.tscn" id="6_1jghj"]
 
 [sub_resource type="Gradient" id="Gradient_dll30"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_45fix"]
 gradient = SubResource("Gradient_dll30")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6uina"]
+size = Vector2(1120, 568)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45fix"]
 size = Vector2(896, 20)
@@ -30,17 +34,17 @@ target = NodePath("../TopDownPlayer")
 visible = false
 menu_path = "uid://camlgx74mlna4"
 
+[node name="CameraLimitZoneComponent" parent="." unique_id=276472449 instance=ExtResource("6_1jghj")]
+
+[node name="CollisionShape2D" parent="CameraLimitZoneComponent" index="0" unique_id=282465000]
+position = Vector2(312, 12)
+shape = SubResource("RectangleShape2D_6uina")
+
 [node name="RigidBody2D" type="StaticBody2D" parent="." unique_id=900510609]
 position = Vector2(320, 296)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1136401015]
 shape = SubResource("RectangleShape2D_45fix")
-
-[node name="TopDownPlayer" parent="." unique_id=729409689 instance=ExtResource("2_45fix")]
-position = Vector2(320, 88)
-
-[node name="PlatformerPlayer" parent="." unique_id=240714517 instance=ExtResource("3_hal7r")]
-position = Vector2(320, 224)
 
 [node name="PlaySfx" type="Button" parent="." unique_id=1849680328]
 offset_left = 448.0
@@ -70,7 +74,31 @@ offset_right = 563.0
 offset_bottom = 191.0
 text = "STOP MUSIC"
 
+[node name="ThreatIncrease" type="Button" parent="." unique_id=1888386047]
+offset_left = 448.0
+offset_top = 200.0
+offset_right = 526.0
+offset_bottom = 231.0
+text = "Threat++"
+
+[node name="ThreatDecrease" type="Button" parent="." unique_id=2120408374]
+offset_left = 448.0
+offset_top = 240.0
+offset_right = 518.0
+offset_bottom = 271.0
+text = "Threat--"
+
+[node name="TopDownPlayer" parent="." unique_id=1775689760 instance=ExtResource("2_45fix")]
+position = Vector2(304, 88)
+
+[node name="PlatformerPlayer" parent="." unique_id=240714517 instance=ExtResource("3_hal7r")]
+position = Vector2(304, 224)
+
 [connection signal="pressed" from="PlaySfx" to="." method="_on_play_sfx_pressed"]
 [connection signal="pressed" from="PlayMusic1" to="." method="_on_play_music_1_pressed"]
 [connection signal="pressed" from="PlayMusic2" to="." method="_on_play_music_2_pressed"]
 [connection signal="pressed" from="StopMusic" to="." method="_on_stop_music_pressed"]
+[connection signal="pressed" from="ThreatIncrease" to="." method="_on_threat_increase_pressed"]
+[connection signal="pressed" from="ThreatDecrease" to="." method="_on_threat_decrease_pressed"]
+
+[editable path="CameraLimitZoneComponent"]

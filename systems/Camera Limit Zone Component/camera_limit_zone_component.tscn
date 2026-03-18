@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b5kib01h7s7am"]
+
+[ext_resource type="Script" uid="uid://7hxnvb6i4ier" path="res://systems/Camera Limit Zone Component/camera_limit_zone_component.gd" id="1_qdjvw"]
+
+[node name="CameraLimitZoneComponent" type="Area2D" unique_id=276472449]
+script = ExtResource("1_qdjvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=282465000]
+debug_color = Color(0.25882354, 0.63529414, 0, 0)

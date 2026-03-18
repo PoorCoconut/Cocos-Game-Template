@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3s2rxu28qqkm"
+path="res://.godot/imported/Strat Air FX.mp3-88b9f99763a8a996f11f5177f6ca46f3.mp3str"
+
+[deps]
+
+source_file="res://sound/music/example_music/Strat Air FX.mp3"
+dest_files=["res://.godot/imported/Strat Air FX.mp3-88b9f99763a8a996f11f5177f6ca46f3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

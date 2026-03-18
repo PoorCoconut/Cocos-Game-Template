@@ -2,7 +2,7 @@ extends Node
 
 #Store sound effects here...
 var sfx_dict : Dictionary = {
-	
+	"test_sfx" : preload("res://sound/sfx/sfx_example.mp3")
 }
 
 #Here is an example:
@@ -10,6 +10,8 @@ var sfx_dict : Dictionary = {
 #"jump": preload("res://audio/sfx/jump.ogg"),
 #"slide_friction": preload("res://audio/sfx/friction.wav")
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func play_sfx(sfx_name : String, spawn_pos : Vector2) -> void:
 	#Check if sound exists

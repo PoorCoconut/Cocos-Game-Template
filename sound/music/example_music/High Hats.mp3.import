@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhl33w8seh0h5"
+path="res://.godot/imported/High Hats.mp3-965f0ccedb55266f97ab6a518c0f79ad.mp3str"
+
+[deps]
+
+source_file="res://sound/music/example_music/High Hats.mp3"
+dest_files=["res://.godot/imported/High Hats.mp3-965f0ccedb55266f97ab6a518c0f79ad.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

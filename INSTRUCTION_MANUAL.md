@@ -19,6 +19,8 @@
 	>4 CONTROLS
 		# REBIND BUTTON
 		# HOW TO ADD OR REMOVE SECONDARY, TERTIARY OR MORE CONTROLS
+		
+	>5 COMPONENTS SECTION
 
 
 >PRESERVING GOOD ARCHITECTURE
@@ -146,7 +148,37 @@ To use Loading Screen:
 	It's not recommended though because if you want to change the file path, you'd have to dig through all your code again!
 
 # MUSIC MANAGER
-[NOT YET IMPLEMENTED]
+The MUSIC MANAGER handles single tracks and Multi-layered tracks seamlessly. 
+It lets you play defined tracks, set intensity and stop them at will! 
+
+To use the MUSIC MANAGER there are a couple steps you need to do:
+	1. Right Click on the file system, create new resource and type / find MusicTrack.
+	2. Define the Music Track in the resource's inspector: 
+		2.1 Give it a Track Name [very important]
+		2.2 You will need to set the track array by defining a size and darg-dropping your music files into the array.
+		2.3 You can set the music's BPM. This is useful for multi-layered tracks so they will always be in sync.
+	3. In the MusicManager Scene, there is an export in the inspector. Set how many tracks you have, then drag-drop your resources.
+
+Have everything set-up? Great!
+Here's all the methods you need to know to actually communicate with your MusicManager
+Call them using MusicManager.method_name()
+1. change_music(track_name : String, crossfade time : float [optional])
+2. set_intensity(intensity : float, fade time : float [optional])
+3. stop_music(fade time : float [optional])
+
+1. change_music() 
+	Starts the track with the given track name. The track name must be a name in one of the resources. 
+	When music is already playing, it fades out the old one and fades in the new one.
+
+2. set_intensity()
+	This is only useful if you have multi-layered tracks and you want it to be dynamic. 
+	You will have to put a value between 0 and 1 (inclusive) for it to function.
+	[If you have multi-layered tracks, it divides your layers and plays the layers based on how intense the intensity is]
+	ex: If we have 3 layers, layer 1 fades in at 0.5, layer 2 at 1.0.
+	The first index (index 0) will always be playing.
+
+3. stop_music()
+	Fades out the current playing music. 
 
 # SOUND BANK
 The SOUND BANK stores your SOUND EFFECTS. They can be called ANYTIME using the SOUND BANK!
@@ -215,26 +247,10 @@ For example:
 	SecondaryJump button has Bind Index: 1
 	TertiaryJump button has Bind Index: 2
 
+# ADDING MORE CONTROLS
 When adding more controls, you can add default inputs under [Project > Project Settings > Input Map] !
+In fact, it is recommended to do such. 
+When adding onto your control settings, follow the REBIND BUTTON instructions as you WILL need a rebind button to rebind.
 
-Now, in your SettingsManager find:
-var slotted_binds: Dictionary
-
-You will need to add what you have in your Input Map exactly in Project Settings here.
-currently, slotted_binds is set to
-var slotted_binds: Dictionary = {
-	"move_up" : {0 : InputEvent, 1: InputEvent},
-	"move_down" : {0 : InputEvent, 1: InputEvent},
-	"move_left" : {0 : InputEvent, 1: InputEvent},
-	"move_right" : {0 : InputEvent, 1: InputEvent}, 
-}
-
-Let's say you want to add tertiary controls and to be able to bind jump
-now your slotted_binds should look like this:
-var slotted_binds: Dictionary = {
-	"move_up" : {0 : InputEvent, 1: InputEvent, 2 : InputEvent},
-	"move_down" : {0 : InputEvent, 1: InputEvent, 2 : InputEvent},
-	"move_left" : {0 : InputEvent, 1: InputEvent, 2 : InputEvent},
-	"move_right" : {0 : InputEvent, 1: InputEvent, 2 : InputEvent}, 
-	"jump" : {0 : InputEvent, 1: InputEvent, 2 : InputEvent},
-}
+> COMPONENTS SECTION
+[TO BE DOCUMENTED...]

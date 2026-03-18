@@ -1,11 +1,19 @@
 extends Camera2D
 
+enum CameraMode { 
+	##The Camera is fixed in a room. When the target moves out of the room, it moves 1 "room" towards the target's direction.
+	ROOM_BASED , 
+	##The Camera is fixed to the target. If your room has a CameraLimitZoneCompnent, the camera will automatically stop following when it reaches its limit.
+	ENTITY_ATTACHED }
+##Camera Mode Options
+@export var camera_mode: CameraMode = CameraMode.ENTITY_ATTACHED
+
+
 @export var target : CharacterBody2D
 @export var following : bool = true
 
 var cameraShakeNoise : FastNoiseLite
 
-# Cache these variables so we don't ask ProjectSettings every frame!
 var viewport_width : float
 var viewport_height : float
 
@@ -14,24 +22,24 @@ func _ready() -> void:
 	viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 	cameraShakeNoise = FastNoiseLite.new()
 	
+	if camera_mode == CameraMode.ROOM_BASED:
+		anchor_mode = Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT
+	else:
+		anchor_mode = Camera2D.ANCHOR_MODE_DRAG_CENTER
+	
 	if target:
 		following = true
-		# We use our new function to snap it to the right room immediately
-		moveCameraToEntity(target.global_position)
+		_update_camera_position()
 
 func _process(_delta: float) -> void:
 	if following and target != null:
-		# NOTE: If you are making a room-based game (like Zelda/Metroid), 
-		# you should call moveCameraToEntity() here instead of follow_target()
-		follow_target()
-		#moveCameraToEntity(target.global_position)
+		_update_camera_position()
 
-func follow_target():
-	if target:
-		# Because the camera is Top-Left, we MUST subtract half the screen width/height
-		# to keep the player perfectly in the center of the screen.
-		global_position.x = target.global_position.x - (viewport_width / 2.0)
-		global_position.y = target.global_position.y - (viewport_height / 2.0)
+func _update_camera_position() -> void:
+	if camera_mode == CameraMode.ROOM_BASED:
+		moveCameraToEntity(target.global_position)
+	else:
+		global_position = target.global_position
 
 func moveCameraToEntity(entity_global_pos : Vector2):
 	var grid_x = floor(entity_global_pos.x / viewport_width)
@@ -48,3 +56,9 @@ func startCameraShake(intensity:float):
 func resetCameraOffset():
 	offset.x = 0
 	offset.y = 0
+
+func apply_room_limits(left: int, right: int, top: int, bottom: int) -> void:
+	limit_left = left
+	limit_right = right
+	limit_top = top
+	limit_bottom = bottom
