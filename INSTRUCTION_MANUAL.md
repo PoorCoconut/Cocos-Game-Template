@@ -133,10 +133,13 @@ The Settings Manager stores your settings. Most of the code here will usually be
 For example, the main menu or the pause menu. 
 You can add other variables for your other settings you wwould like to save and load.
 
+#SCREEN TRANSITION
+Screen Transition is a screen transition. You can configure your own screen transition pattern. Currently, it uses a shader setup.
+You may call it via ScreenTransition.trans_in(trans_time : float) or ScreenTransition.trans_out(trans_time : float)
+
 # LOADING SCREEN
 Loading Screen loads your level in a different thread so that when you load a level your game doesn't look like it froze.
 You can customize this loading screen! 
-[IT IS RECOMMENDED TO USE LOADING SCREEN WHEN SWITCHING TO DIFFERENT SCENES]
 To use Loading Screen:
 	You can do an export file to your var so that you can drag a scene to the inspector. 
 	GODOT will convert it to a string automatically!
@@ -146,6 +149,9 @@ To use Loading Screen:
 	
 	next_level_path can be replaced with a hardcoded String path [IT MUST BE A STRING]. 
 	It's not recommended though because if you want to change the file path, you'd have to dig through all your code again!
+
+[IT IS RECOMMENDED TO USE GameManager.load_next_level()] AS IT AUTOMATICALLY COMBINES
+ScreenTransition.trans_in() - LoadingScreen.load_level(-) - ScreenTransition.trans_out()
 
 # MUSIC MANAGER
 The MUSIC MANAGER handles single tracks and Multi-layered tracks seamlessly. 

@@ -27,6 +27,7 @@ LoadingScreen="*uid://1cdnr1bl805e"
 MusicManager="*uid://c0m8bxeg6ekky"
 SettingsManager="*uid://boav6xpuq74ks"
 SoundBank="*uid://ce7kxbchc8ajm"
+ScreenTransition="*uid://rgy5yu73bm2h"
 
 [display]
 

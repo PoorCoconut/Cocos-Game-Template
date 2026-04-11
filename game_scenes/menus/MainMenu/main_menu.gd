@@ -17,7 +17,7 @@ func _ready() -> void:
 	slider_s_vol.value = SettingsManager.sfx_vol
 
 func _on_button_play_pressed() -> void:
-	LoadingScreen.load_level(next_level_path)
+	GameManager.load_next_level(next_level_path)
 
 func _on_button_settings_pressed() -> void:
 	%SettingsContainer.show()

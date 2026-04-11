@@ -37,6 +37,10 @@ func load_player_position():
 		return loaded_pos
 	return null
 
+##Next Level Helper Functions
+func load_next_level(next_level_path : String) -> void:
+	await ScreenTransition.trans_in().finished
+	LoadingScreen.load_level(next_level_path)
 
 ##Camera Helper Functions
 func do_camera_shake(intensity:float, time:float):
