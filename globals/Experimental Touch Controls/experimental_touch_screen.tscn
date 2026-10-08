@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://br1ajwyix4rbj"]
+
+[ext_resource type="Script" uid="uid://qtx2d4ehc8c2" path="res://globals/Experimental Touch Controls/experimental_touch_screen.gd" id="1_bx1ej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx1ej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81v1l"]
+
+[node name="ExperimentalTouchScreen" type="CanvasLayer" unique_id=339463489]
+process_mode = 3
+layer = 5
+script = ExtResource("1_bx1ej")
+
+[node name="Control" type="Control" parent="." unique_id=1835531380]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=573132293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=976877051]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="LeftButton" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=720658941]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "←"
+
+[node name="RightButton" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=2066842203]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "→"
+
+[node name="UpButton" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=1089375654]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "↑"
+
+[node name="DownButton" type="Button" parent="Control/MarginContainer/HBoxContainer" unique_id=1985942492]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "↓"
+
+[node name="LeftTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer/HBoxContainer" unique_id=2000737380]
+unique_name_in_owner = true
+position = Vector2(15, 15)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_bx1ej")
+action = "turn_left"
+
+[node name="RightTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer/HBoxContainer" unique_id=1543633642]
+unique_name_in_owner = true
+position = Vector2(55, 15)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_bx1ej")
+action = "turn_right"
+
+[node name="UpTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer/HBoxContainer" unique_id=2029652281]
+unique_name_in_owner = true
+position = Vector2(95, 15)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_bx1ej")
+action = "up"
+
+[node name="DownTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer/HBoxContainer" unique_id=2068034685]
+unique_name_in_owner = true
+position = Vector2(135, 15)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_bx1ej")
+action = "down"
+
+[node name="AtkTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer/HBoxContainer" unique_id=1879383686]
+unique_name_in_owner = true
+position = Vector2(245, 15)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_bx1ej")
+
+[node name="MovTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer/HBoxContainer" unique_id=876821496]
+unique_name_in_owner = true
+position = Vector2(285.00003, 15)
+scale = Vector2(1.3, 1.3)
+shape = SubResource("RectangleShape2D_bx1ej")
+action = "move"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer" unique_id=222416932]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="AtkButton" type="Button" parent="Control/MarginContainer/HBoxContainer2" unique_id=596149132]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "X"
+
+[node name="MovButton" type="Button" parent="Control/MarginContainer/HBoxContainer2" unique_id=1972025727]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+text = "Z"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer" unique_id=1978774876]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 10
+
+[node name="PauseButton" type="Button" parent="Control/MarginContainer/HBoxContainer3" unique_id=1349891646]
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "E"
+
+[node name="ToggleUpDown" type="Button" parent="Control/MarginContainer/HBoxContainer3" unique_id=193213388]
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+size_flags_vertical = 0
+text = "↑↓"
+
+[node name="PauseTouchScreen" type="TouchScreenButton" parent="Control/MarginContainer" unique_id=162434061]
+unique_name_in_owner = true
+position = Vector2(18, 18)
+shape = SubResource("RectangleShape2D_81v1l")
+
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer3/ToggleUpDown" to="." method="_on_toggle_up_down_pressed"]
