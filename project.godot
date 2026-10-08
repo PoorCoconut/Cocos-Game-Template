@@ -12,12 +12,8 @@ config_version=5
 
 config/name="Coco's Game Template"
 run/main_scene="uid://camlgx74mlna4"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
-
-[audio]
-
-buses/default_bus_layout="uid://bq7tu06oyqbef"
 
 [autoload]
 

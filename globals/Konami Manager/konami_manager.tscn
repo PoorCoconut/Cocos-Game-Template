@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0ae1cms8lw8j"]
+
+[ext_resource type="Script" uid="uid://b0v7slebhokyc" path="res://globals/Konami Manager/konami_manager.gd" id="1_55wjr"]
+
+[node name="KonamiManager" type="Node" unique_id=1739586380]
+script = ExtResource("1_55wjr")
