@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_1hmoe")
-sequence = Array[String](["up", "up", "down", "down", "turn_left", "turn_right", "turn_left", "turn_right", "move", "shoot"])
+sequence = Array[String](["move_up", "move_up", "move_down", "move_down", "move_left", "move_right", "move_left", "move_right"])
 single_use = true
 metadata/_custom_type_script = "uid://rs60b3fygs8g"

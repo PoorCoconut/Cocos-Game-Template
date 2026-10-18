@@ -50,49 +50,52 @@ horizontal_alignment = 1
 
 [node name="MasterVolume" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=632613896]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MasterVolume" unique_id=1763379922]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "Master"
 
 [node name="VolMasterSlider" type="HSlider" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MasterVolume" unique_id=887957647]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 2.0
 step = 0.1
 
 [node name="MusicVolume" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=664460231]
 layout_mode = 2
-theme_override_constants/separation = 21
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MusicVolume" unique_id=802494276]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "Music"
 
 [node name="VolMusicSlider" type="HSlider" parent="Control/MarginContainer/PanelContainer/VBoxContainer/MusicVolume" unique_id=2011425788]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 2.0
 step = 0.1
 
 [node name="SFXVolume" type="HBoxContainer" parent="Control/MarginContainer/PanelContainer/VBoxContainer" unique_id=133005083]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="Control/MarginContainer/PanelContainer/VBoxContainer/SFXVolume" unique_id=143706060]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "SFX"
 
 [node name="VolSFXSlider" type="HSlider" parent="Control/MarginContainer/PanelContainer/VBoxContainer/SFXVolume" unique_id=271924846]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 2.0
 step = 0.1
 

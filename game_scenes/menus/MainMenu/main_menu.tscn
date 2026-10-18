@@ -125,49 +125,52 @@ horizontal_alignment = 1
 
 [node name="MasterVolume" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer" unique_id=782091974]
 layout_mode = 2
-theme_override_constants/separation = 14
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/MasterVolume" unique_id=88844148]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "Master"
 
 [node name="Slider_MaVol" type="HSlider" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/MasterVolume" unique_id=637964225]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 2.0
 step = 0.1
 
 [node name="MusicVolume" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer" unique_id=170264899]
 layout_mode = 2
-theme_override_constants/separation = 19
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/MusicVolume" unique_id=1012630994]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "Music"
 
 [node name="Slider_MuVol" type="HSlider" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/MusicVolume" unique_id=1222097655]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 2.0
 step = 0.1
 
 [node name="SFXVolume" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer" unique_id=1251691021]
 layout_mode = 2
-theme_override_constants/separation = 28
+theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/SFXVolume" unique_id=1136966587]
+custom_minimum_size = Vector2(55, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "SFX"
 
 [node name="Slider_SVol" type="HSlider" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/SFXVolume" unique_id=1461787990]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 max_value = 2.0
 step = 0.1
 
@@ -176,7 +179,6 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 theme_override_colors/default_color = Color(1, 0.60693425, 0.54883397, 1)
-theme_override_font_sizes/normal_font_size = 8
 bbcode_enabled = true
 text = "[shake]WARNING! YOU ARE ABOUT TO RESET EVERYTHING. INCLUDING YOUR SAVE FILE!"
 fit_content = true
@@ -188,14 +190,12 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.9999997, 0.13447198, 0.38570955, 1)
-theme_override_font_sizes/font_size = 8
 text = "NUKE MY FILE!"
 
 [node name="ResetButton" type="Button" parent="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer" unique_id=1591014304]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 8
 text = "RESET GAME"
 
 [node name="ViewportSettings" type="MarginContainer" parent="SettingsContainer/SettingsTabs" unique_id=2086456263]
@@ -217,68 +217,50 @@ layout_mode = 2
 text = "VIEWPORT SETTINGS"
 horizontal_alignment = 1
 
-[node name="ScreenResolution" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer" unique_id=1107103800]
+[node name="ScreenResolution" type="VBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer" unique_id=2116790890]
 layout_mode = 2
 theme_override_constants/separation = 19
 
 [node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution" unique_id=495751952]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "Screen Resolution"
+text = "Window Size"
 
-[node name="ScreenResAccordion2" type="FoldableContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution" unique_id=1578316268]
-layout_mode = 2
-folded = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2" unique_id=1557384518]
-visible = false
+[node name="VBoxContainer" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution" unique_id=1736728559]
 layout_mode = 2
 
-[node name="Button_1080p" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2/VBoxContainer" unique_id=1520860721]
+[node name="Button_1080p" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/VBoxContainer" unique_id=1520860721]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "1980x1080"
 
-[node name="Button_720p" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2/VBoxContainer" unique_id=1963271185]
+[node name="Button_720p" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/VBoxContainer" unique_id=1963271185]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "1280x720"
 
-[node name="Button_540p" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2/VBoxContainer" unique_id=976220345]
+[node name="Button_540p" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/VBoxContainer" unique_id=976220345]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "990x540"
 
-[node name="WindowMode" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer" unique_id=463611335]
+[node name="WindowMode" type="VBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer" unique_id=1426119291]
 layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="Label" type="Label" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode" unique_id=1182272754]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "Window Mode"
 
-[node name="WindowModeAccordion" type="FoldableContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode" unique_id=1854593696]
-layout_mode = 2
-folded = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion" unique_id=1726534731]
-visible = false
+[node name="VBoxContainer" type="HBoxContainer" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode" unique_id=1388254935]
 layout_mode = 2
 
-[node name="Button_Windowed" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion/VBoxContainer" unique_id=1876477194]
+[node name="Button_Windowed" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/VBoxContainer" unique_id=1876477194]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "WINDOWED"
 
-[node name="Button_Fullscreen" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion/VBoxContainer" unique_id=976583148]
+[node name="Button_Fullscreen" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/VBoxContainer" unique_id=976583148]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "FULLSCREEN"
 
-[node name="Button_ExclusiveFullscreen" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion/VBoxContainer" unique_id=1864238956]
+[node name="Button_ExclusiveFullscreen" type="Button" parent="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/VBoxContainer" unique_id=1864238956]
 layout_mode = 2
-theme_override_font_sizes/font_size = 8
 text = "EXCLUSIVE FULLSCREEN"
 
 [node name="ControlsSettings" type="MarginContainer" parent="SettingsContainer/SettingsTabs" unique_id=2007466088]
@@ -411,7 +393,6 @@ offset_bottom = 28.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 8
 text = "BACK"
 
 [connection signal="pressed" from="ButtonContainerSizer/ButtonContainer/Button_Play" to="." method="_on_button_play_pressed"]
@@ -423,11 +404,11 @@ text = "BACK"
 [connection signal="value_changed" from="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/SFXVolume/Slider_SVol" to="." method="_on_slider_s_vol_value_changed"]
 [connection signal="pressed" from="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/NukeButton" to="." method="_on_nuke_button_pressed"]
 [connection signal="pressed" from="SettingsContainer/SettingsTabs/GeneralSettings/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
-[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2/VBoxContainer/Button_1080p" to="." method="_on_button_1080p_pressed"]
-[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2/VBoxContainer/Button_720p" to="." method="_on_button_720p_pressed"]
-[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/ScreenResAccordion2/VBoxContainer/Button_540p" to="." method="_on_button_540p_pressed"]
-[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion/VBoxContainer/Button_Windowed" to="." method="_on_button_windowed_pressed"]
-[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion/VBoxContainer/Button_Fullscreen" to="." method="_on_button_fullscreen_pressed"]
-[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/WindowModeAccordion/VBoxContainer/Button_ExclusiveFullscreen" to="." method="_on_button_exclusive_fullscreen_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/VBoxContainer/Button_1080p" to="." method="_on_button_1080p_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/VBoxContainer/Button_720p" to="." method="_on_button_720p_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/ScreenResolution/VBoxContainer/Button_540p" to="." method="_on_button_540p_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/VBoxContainer/Button_Windowed" to="." method="_on_button_windowed_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/VBoxContainer/Button_Fullscreen" to="." method="_on_button_fullscreen_pressed"]
+[connection signal="pressed" from="SettingsContainer/SettingsTabs/ViewportSettings/VBoxContainer/WindowMode/VBoxContainer/Button_ExclusiveFullscreen" to="." method="_on_button_exclusive_fullscreen_pressed"]
 [connection signal="pressed" from="SettingsContainer/SettingsTabs/ControlsSettings/VBoxContainer/ControlsReset" to="." method="_on_controls_reset_pressed"]
 [connection signal="pressed" from="SettingsContainer/Back/BackButton" to="." method="_on_back_button_pressed"]
